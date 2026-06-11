@@ -1,0 +1,314 @@
+/* Paleta de colores */
+:root {
+    --color-fondo: #FCE4E7;      /* Rosa blush suave */
+    --color-texto: #3B1F24;      /* Burdeos profundo */
+    --color-primario: #EA5E78;   /* Rosa coral vibrante */
+    --color-secundario: #F2A2B3; /* Rosa pastel */
+    --fondo-tarjeta: #ffffff;    /* Blanco */
+}
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto); 
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- BARRA DE NAVEGACIÓN --- */
+nav {
+    background: #ffffff;
+    border-bottom: 2px solid var(--color-secundario);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.activo, .nav-links a:hover {
+    color: var(--color-primario);
+}
+
+/* --- CONTENEDOR CON DEGRADADO UNIFICADO --- */
+.contenedor-principal {
+    background: linear-gradient(135deg, var(--color-primario), var(--color-texto));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 1.5rem;
+    flex-grow: 1; /* Esto hace que el degradado ocupe todo el espacio hasta el footer */
+}
+
+/* Sección Hero interna */
+.hero-contenido {
+    text-align: center;
+    max-width: 700px;
+    margin-bottom: 3.5rem; /* Separación suave entre el botón y la tarjeta */
+}
+
+.hero-contenido h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: 'Georgia', serif;
+}
+
+.hero-contenido p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+/* Botón llamativo */
+.btn-principal {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-principal:hover {
+    transform: scale(1.05);
+    background-color: #EA5E78;
+}
+
+/* Sección informativa inferior */
+.seccion-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.tarjeta-bienvenida {
+    background-color: var(--fondo-tarjeta);
+    color: var(--color-texto); /* Texto oscuro para que se lea bien sobre blanco */
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-bienvenida h3 {
+    color: var(--color-primario);
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+}
+
+.tarjeta-bienvenida p {
+    color: #5a4548; 
+    font-size: 1rem;
+}
+
+/* --- FOOTER (CONSERVA SU COLOR ORIGINAL) --- */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--color-texto); /* Burdeos profundo */
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* --- DISEÑO MÓVIL --- */
+@media (max-width: 768px) {
+    .nav-contenedor {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .contenedor-principal {
+        padding: 3rem 1rem;
+    }
+    .hero-contenido h1 {
+        font-size: 2.2rem;
+    }
+    .hero-contenido p {
+        font-size: 1rem;
+    }
+    .tarjeta-bienvenida {
+        padding: 1.8rem 1.2rem;
+    }
+}
+
+/* ==========================================
+   ESTILOS DE LA PÁGINA DE CATÁLOGO 
+   ========================================== */
+
+.catalogo-seccion {
+    background-color: #ffffff; 
+    padding: 4rem 5%;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.catalogo-contenedor {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    gap: 3rem; 
+}
+
+/* --- COLUMNA IZQUIERDA (BANNER) --- */
+.columna-tendencias {
+    flex: 1; /* Toma el mismo ancho base que la cuadrícula */
+    position: relative;
+}
+
+.tarjeta-tendencias-wrapper {
+    position: relative;
+    height: 100%;
+    min-height: 600px; /* Altura mínima para que luzca imponente */
+}
+
+.img-tendencias-grande {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la foto llene el espacio sin deformarse */
+    display: block;
+}
+
+/* El recuadro blanco que dice #tendencias */
+.cuadro-flotante-tendencias {
+    position: absolute;
+    bottom: 25%;
+    right: -10%; /* Sobresale un poquito hacia la derecha como en tu imagen */
+    background-color: #ffffff;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    z-index: 10;
+}
+
+.cuadro-flotante-tendencias h2 {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 2.5rem;
+    color: #000000;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+
+.enlace-lee-mas {
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-bottom: 2px solid #000000; /* Línea negra debajo del texto */
+    padding-bottom: 2px;
+}
+
+/* --- COLUMNA DERECHA (CUADRÍCULA DE PRODUCTOS) --- */
+.columna-productos {
+    flex: 1.2; /* Un poquito más ancha para que entren bien las dos columnas */
+}
+
+.cuadricula-productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas exactas */
+    gap: 3rem 2rem; /* Espacio entre filas y columnas */
+}
+
+.tarjeta-producto {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-img-producto {
+    width: 100%;
+    height: 280px; /* Altura estándar para las fotos de producto */
+    background-color: #EA5E78; /* Fondo gris claro por si no hay imagen cargada */
+    overflow: hidden;
+}
+
+.contenedor-img-producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.precio-producto {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000000;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.descripcion-producto {
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    line-height: 1.4;
+}
+
+/* --- RESPONSIVE PARA EL CATÁLOGO --- */
+@media (max-width: 992px) {
+    .catalogo-contenedor {
+        flex-direction: column; /* En tabletas y celulares se pone uno abajo del otro */
+        gap: 4rem;
+    }
+    
+    .cuadro-flotante-tendencias {
+        right: 5%; /* Ya no sobresale de la pantalla en móviles */
+        bottom: 10%;
+    }
+    
+    .tarjeta-tendencias-wrapper {
+        min-height: 450px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cuadricula-productos {
+        grid-template-columns: 1fr; /* En pantallas muy pequeñas, los productos van en 1 sola columna */
+    }
+    
+    .cuadro-flotante-tendencias {
+        position: relative;
+        right: 0;
+        bottom: 0;
+        margin-top: 1rem;
+        box-shadow: none;
+        border: 1px solid #eee;
+    }
+}
