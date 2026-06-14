@@ -7,12 +7,15 @@
     --fondo-tarjeta: #ffffff;    /* Blanco */
 }
 
+/* ==========================================
+   ESTILOS BASE
+   ========================================== */
+
 /* Reset básico */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
 }
 
 body {
@@ -141,7 +144,7 @@ nav {
     font-size: 1rem;
 }
 
-/* --- FOOTER (CONSERVA SU COLOR ORIGINAL) --- */
+/* --- FOOTER --- */
 footer {
     text-align: center;
     padding: 1.5rem;
@@ -191,20 +194,20 @@ footer {
 
 /* --- COLUMNA IZQUIERDA (BANNER) --- */
 .columna-tendencias {
-    flex: 1; /* Toma el mismo ancho base que la cuadrícula */
+    flex: 1;
     position: relative;
 }
 
 .tarjeta-tendencias-wrapper {
     position: relative;
     height: 100%;
-    min-height: 600px; /* Altura mínima para que luzca imponente */
+    min-height: 600px;
 }
 
 .img-tendencias-grande {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Hace que la foto llene el espacio sin deformarse */
+    object-fit: cover;
     display: block;
 }
 
@@ -212,7 +215,7 @@ footer {
 .cuadro-flotante-tendencias {
     position: absolute;
     bottom: 25%;
-    right: -10%; /* Sobresale un poquito hacia la derecha como en tu imagen */
+    right: -10%; 
     background-color: #ffffff;
     padding: 2.5rem 3rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -234,19 +237,19 @@ footer {
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
-    border-bottom: 2px solid #000000; /* Línea negra debajo del texto */
+    border-bottom: 2px solid #000000; 
     padding-bottom: 2px;
 }
 
 /* --- COLUMNA DERECHA (CUADRÍCULA DE PRODUCTOS) --- */
 .columna-productos {
-    flex: 1.2; /* Un poquito más ancha para que entren bien las dos columnas */
+    flex: 1.2; 
 }
 
 .cuadricula-productos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas exactas */
-    gap: 3rem 2rem; /* Espacio entre filas y columnas */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 3rem 2rem; 
 }
 
 .tarjeta-producto {
@@ -256,8 +259,8 @@ footer {
 
 .contenedor-img-producto {
     width: 100%;
-    height: 280px; /* Altura estándar para las fotos de producto */
-    background-color: #EA5E78; /* Fondo gris claro por si no hay imagen cargada */
+    height: 280px; 
+    background-color: #EA5E78; 
     overflow: hidden;
 }
 
@@ -284,12 +287,12 @@ footer {
 /* --- RESPONSIVE PARA EL CATÁLOGO --- */
 @media (max-width: 992px) {
     .catalogo-contenedor {
-        flex-direction: column; /* En tabletas y celulares se pone uno abajo del otro */
+        flex-direction: column; 
         gap: 4rem;
     }
     
     .cuadro-flotante-tendencias {
-        right: 5%; /* Ya no sobresale de la pantalla en móviles */
+        right: 5%; 
         bottom: 10%;
     }
     
@@ -300,7 +303,7 @@ footer {
 
 @media (max-width: 576px) {
     .cuadricula-productos {
-        grid-template-columns: 1fr; /* En pantallas muy pequeñas, los productos van en 1 sola columna */
+        grid-template-columns: 1fr; 
     }
     
     .cuadro-flotante-tendencias {
@@ -311,4 +314,75 @@ footer {
         box-shadow: none;
         border: 1px solid #eee;
     }
+}
+
+/* ==========================================
+   NUEVO: SECCIÓN DE MENÚ DE CATEGORÍAS (ESTILO CÁPSULAS)
+   ========================================== */
+
+.seccion-categorias {
+    flex-grow: 1; /* Ocupa el espacio restante entre nav y footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1.5rem;
+    /* Utilizamos el mismo degradado elegante de tu contenedor principal */
+    background: linear-gradient(135deg, var(--color-primario), var(--color-texto));
+}
+
+.menu-categorias-overlay {
+    text-align: center;
+    color: #ffffff;
+    /* Efecto cristal (Glassmorphism) para que resalte sobre el fondo */
+    background: rgba(255, 255, 255, 0.15); 
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 550px;
+}
+
+.menu-categorias-overlay h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Georgia', serif; /* Manteniendo la fuente de tus títulos */
+}
+
+.menu-categorias-overlay p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.categorias-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; /* Espaciado entre los botones */
+}
+
+.btn-categoria-capsula {
+    display: block;
+    background-color: #ffffff;
+    color: var(--color-texto); /* Burdeos profundo para el texto */
+    padding: 16px 30px;
+    border-radius: 50px; /* Forma de cápsula */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-categoria-capsula:hover {
+    transform: translateY(-3px) scale(1.02); /* Se levanta al pasar el mouse */
+    background-color: var(--color-fondo); /* Fondo rosa claro al hacer hover */
+    color: var(--color-primario); /* Texto rosa vibrante al hacer hover */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.btn-categoria-capsula:active {
+    transform: translateY(1px); /* Se hunde ligeramente al hacer clic */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
