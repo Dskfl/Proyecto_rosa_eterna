@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosa Eterna | Inicio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-contenedor">
+            <a href="inicio.html" class="nav-logo">
+                <img src="logo.jpeg" alt="Rosa Eterna" style="height: 50px; object-fit: contain; display: block;">
+            </a>
+            <div class="nav-links">
+                <a href="inicio.html" class="activo">Inicio</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="rastreo.html">Rastreo de pedidos</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contenedor-rastreo">
+        <div class="tarjeta-rastreo">
+            <h1 class="titulo-rastreo">Rastrea tu Pedido</h1>
+            <p class="subtitulo-rastreo">Ingresa tu número de orden para conocer el estado de tus flores o evento.</p>
+            <div class="formulario-busqueda">
+                <input type="text" placeholder="# Número de Orden (Ej: RE-1045)" class="input-rastreo">
+                <button class="btn-buscar">Rastrear</button>
+            </div>
+   <div class="detalles-pedido">
+    <div>
+        <h3>Pedido: <strong>#RE-1045</strong></h3>
+    </div>
+
+    <div>
+        <p><strong>Destinatario:</strong> María López</p>
+    </div>
+
+    <div>
+        <p><strong>Entrega estimada:</strong> 16 de Junio, 2026</p>
+    </div>
+           </div>
+            <div class="timeline">
+                <div class="timeline-paso completado">
+                    <div class="icono-paso">✓</div>
+                    <div class="texto-paso">
+                        <h4>Pedido Confirmado</h4>
+                        <p>Hemos recibido tu pedido.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-paso completado">
+                    <div class="icono-paso">✓</div>
+                    <div class="texto-paso">
+                        <h4>En Preparación</h4>
+                        <p>Nuestros floristas están creando tu arreglo.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-paso activo">
+                    <div class="icono-paso">🚚</div>
+                    <div class="texto-paso">
+                        <h4>En Camino</h4>
+                        <p>Tu pedido está en ruta de entrega.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-paso pendiente">
+                    <div class="icono-paso">🎁</div>
+                    <div class="texto-paso">
+                        <h4>Entregado</h4>
+                        <p>Esperando confirmación de entrega.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Rosa Eterna. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
